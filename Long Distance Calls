@@ -1,0 +1,57 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	double time,
+		   minutes,
+		   rate;
+
+	cout << setprecision(2) << fixed;
+	cout << " What is the time? " << endl;
+	cout << " Enter the time in this format: HH.MM, HH is hours and \n";
+	cout << " MM is minutes:   ";
+	cin >> time;
+	if(time < 00.00 || time > 23.59)
+	{
+		cout << " Please enter a time between 00.00 hours and 23.59 hours." << endl;
+		
+		return 0;
+	}
+	//time - static_cast<int>(time);
+	/*if(time > 59)
+	{
+		cout << " The minutes in HH.MM cannot exceed 59." << endl;
+	
+		return 0;
+	}		*/
+
+	cout << "\n How many minutes was your call?  ";
+	cin >> minutes;
+	cout << " I will display the charges depending on when the call was made\n";
+	cout << " and how many minutes the call was." << endl;
+	if(time >= 00.00 && time <= 05.59)
+	{
+		rate = 0.12;
+		cout << " The rate of the starting time of call is " << rate << "." << endl;
+	}
+	else if(time >= 07.00 && time <= 12.59)
+	{
+		rate = 0.23;
+		cout << " The rate of the starting time of call is " << rate << "." << endl;
+	}
+	else if(time >= 13.00 && time <= 19.00)
+	{
+		rate = 0.55;
+		cout << " The rate of the starting time of call is " << rate << "." << endl;
+	}
+	else if(time >= 19.01 && time <= 23.59)
+	{
+		rate = 0.35;
+		cout << " The rate of the starting time of call is " << rate << "." << endl;
+}
+
+
+	return 0;
+}
